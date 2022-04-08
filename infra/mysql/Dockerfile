@@ -1,6 +1,6 @@
 FROM mysql/mysql-server:8.0
 
-ENV MYSQL_DATABASE=db_name \
+ENV MYSQL_DATABASE=${DB_NAME} \
   MYSQL_USER=master \
   MYSQL_PASSWORD=master \
   MYSQL_ROOT_PASSWORD=rootroot \
