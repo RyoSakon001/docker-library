@@ -14,9 +14,8 @@ $ nano ./infra/mysql/Dockerfile
 $ make laravel_1
 ```
 
-４．.env.exampleから.envを作成してください。このとき、環境変数を設定してください。（特にDB周辺）
+４．.envの環境変数を設定してください。（特にDB周辺。ホストはappコンテナとdbコンテナで異なるため、localhostではなくdbを指定する。）
 ```
-$ cp -p ./src/.env.example ./src/.env
 $ nano ./src/.env
 ```
 

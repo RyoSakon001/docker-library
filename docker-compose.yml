@@ -4,7 +4,7 @@ services:
   app:
     build: ./infra/php
     volumes:
-      - ./src:/data # 左がホスト、右がコンテナ内。両方は同じ内容になる
+      - ./src:/data
 
   web:
     image: nginx:1.20-alpine
