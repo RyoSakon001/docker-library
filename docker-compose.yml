@@ -4,6 +4,10 @@ services:
     build:
       context: .
       dockerfile: ./docker/php-fpm/Dockerfile
+      args:
+        - UID=${UID}
+        - GID=${GID}
+        - USERNAME=${USERNAME}
     volumes:
       - ${APP_CODE_PATH_HOST}:/var/www/html/
 
@@ -11,6 +15,10 @@ services:
     build:
       context: .
       dockerfile: ./docker/php-fpm/Dockerfile
+      args:
+        - UID=${UID}
+        - GID=${GID}
+        - USERNAME=${USERNAME}
     ports:
       - 9000:9000
     volumes:

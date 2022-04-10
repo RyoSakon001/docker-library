@@ -13,6 +13,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+ARG UID
+ARG GID
+ARG USERNAME
+RUN groupadd -g ${GID} ${USERNAME} \
+  && useradd -u ${UID} -g ${GID} -s /bin/bash -m ${USERNAME}
+USER ${UID}
+
 COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
 
 COPY --from=node:14.2 /usr/local/bin /usr/local/bin
